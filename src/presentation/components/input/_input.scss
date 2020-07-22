@@ -17,5 +17,9 @@
     background-color: #EF5350;
     cursor: help;
     border-radius: 25px;
+
+    &.success{
+      background-color: #28a745;
+    }
   }
 }
