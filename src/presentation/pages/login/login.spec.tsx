@@ -55,6 +55,16 @@ describe('Login', () => {
     expect(passwordStatus.classList)
   })
 
+  test('Should show valid email if Validation succeeds', () => {
+    const { sut, validationSpy } = makeSut()
+    validationSpy.errorMessage = null
+    const emailInput = sut.getByTestId('email')
+    const emailStatus = sut.getByTestId('email-status')
+    fireEvent.input(emailInput, { target: { value: faker.internet.email() } })
+    expect(emailStatus.title).toBe('Tudo Certo')
+    expect(emailStatus.classList).toContain('success')
+  })
+
   test('Should show valid password if Validation succeeds', () => {
     const { sut, validationSpy } = makeSut()
     validationSpy.errorMessage = null
