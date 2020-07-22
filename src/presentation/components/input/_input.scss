@@ -1,0 +1,21 @@
+.inputWrap {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  input {
+   flex-grow: 1;
+  }
+
+  .status {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    background-color: #EF5350;
+    cursor: help;
+    border-radius: 25px;
+  }
+}
