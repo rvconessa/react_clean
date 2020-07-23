@@ -74,4 +74,15 @@ describe('Login', () => {
     expect(passwordStatus.title).toBe('Tudo Certo')
     expect(passwordStatus.classList).toContain('success')
   })
+
+  test('Should enable button submit', () => {
+    const { sut, validationSpy } = makeSut()
+    validationSpy.errorMessage = null
+    const emailInput = sut.getByTestId('email')
+    fireEvent.input(emailInput, { target: { value: faker.internet.email() } })
+    const passwordInput = sut.getByTestId('password')
+    fireEvent.input(passwordInput, { target: { value: faker.internet.password() } })
+    const submitButton = sut.getByTestId('submit') as HTMLButtonElement
+    expect(submitButton.disabled).toBe(false)
+  })
 })
