@@ -16,7 +16,7 @@ const Input: React.FC<Props> = (props: Props) => {
   }
 
   const getStatus = (): string => {
-    return error ? 'error' : 'success'
+    return error ? 'error' : Styles.success
   }
 
   const getTitle = (): string => {
